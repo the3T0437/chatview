@@ -20,6 +20,8 @@
  * SOFTWARE.
  */
 
+import 'package:chatview/src/my_config/chatview_global_config.dart';
+import 'package:chatview/src/widgets/my_widget/admin_notify.dart';
 import 'package:chatview_utils/chatview_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -304,22 +306,30 @@ class _ChatGroupedListWidgetState extends State<ChatGroupedListWidget>
                           ?.repliedMsgAutoScrollConfig
                           .enableScrollToRepliedMsg ??
                       false;
-                  return ChatBubbleWidget(
-                    key: message.key,
-                    message: message,
-                    slideAnimation: _slideAnimation,
-                    onLongPress: (yCoordinate, xCoordinate) =>
-                        widget.onChatBubbleLongPress(
-                      yCoordinate,
-                      xCoordinate,
-                      message,
-                    ),
-                    onSwipe: widget.assignReplyMessage,
-                    shouldHighlight: state == message.id,
-                    onReplyTap: enableScrollToRepliedMsg
-                        ? (replyId) => _onReplyTap(replyId, snapshot.data)
-                        : null,
-                  );
+
+                  if (message.sentBy ==
+                      ChatviewGlobalConfig.getInstance().adminId) {
+                    return AdminNotify(
+                      message: message,
+                    );
+                  } else {
+                    return ChatBubbleWidget(
+                      key: message.key,
+                      message: message,
+                      slideAnimation: _slideAnimation,
+                      onLongPress: (yCoordinate, xCoordinate) =>
+                          widget.onChatBubbleLongPress(
+                        yCoordinate,
+                        xCoordinate,
+                        message,
+                      ),
+                      onSwipe: widget.assignReplyMessage,
+                      shouldHighlight: state == message.id,
+                      onReplyTap: enableScrollToRepliedMsg
+                          ? (replyId) => _onReplyTap(replyId, snapshot.data)
+                          : null,
+                    );
+                  }
                 },
               );
             },
