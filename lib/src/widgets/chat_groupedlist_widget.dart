@@ -21,7 +21,7 @@
  */
 
 import 'package:chatview/src/my_config/chatview_global_config.dart';
-import 'package:chatview/src/widgets/my_widget/admin_notify.dart';
+import 'package:chatview/src/widgets/my_widget/admin_notification.dart';
 import 'package:chatview_utils/chatview_utils.dart';
 import 'package:flutter/material.dart';
 

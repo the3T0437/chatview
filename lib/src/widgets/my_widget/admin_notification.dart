@@ -15,6 +15,7 @@ class AdminNotify extends StatelessWidget {
         Text(
           message.message,
           textAlign: TextAlign.center,
+          style: const TextStyle(color: Colors.grey),
         )
       ],
     );
