@@ -26,17 +26,17 @@ import 'config_models/link_preview_configuration.dart';
 import 'config_models/receipts_widget_config.dart';
 
 class ChatBubble {
-  const ChatBubble({
-    this.color,
-    this.borderRadius,
-    this.textStyle,
-    this.padding,
-    this.margin,
-    this.linkPreviewConfig,
-    this.senderNameTextStyle,
-    this.receiptsWidgetConfig,
-    this.onMessageRead,
-  });
+  const ChatBubble(
+      {this.color,
+      this.borderRadius,
+      this.textStyle,
+      this.padding,
+      this.margin,
+      this.linkPreviewConfig,
+      this.senderNameTextStyle,
+      this.receiptsWidgetConfig,
+      this.onMessageRead,
+      this.border});
 
   /// Used for giving color of chat bubble.
   final Color? color;
@@ -66,4 +66,6 @@ class ChatBubble {
   /// Callback when a message has been displayed for the first
   /// time only
   final ValueSetter<Message>? onMessageRead;
+
+  final BoxBorder? border;
 }

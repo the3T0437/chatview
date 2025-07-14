@@ -89,6 +89,7 @@ class TextMessageView extends StatelessWidget {
           decoration: BoxDecoration(
             color: highlightMessage ? highlightColor : _color,
             borderRadius: _borderRadius(textMessage),
+            border: _border,
           ),
           child: textMessage.isUrl
               ? LinkPreview(
@@ -144,4 +145,8 @@ class TextMessageView extends StatelessWidget {
   Color get _color => isMessageBySender
       ? outgoingChatBubbleConfig?.color ?? Colors.purple
       : inComingChatBubbleConfig?.color ?? Colors.grey.shade500;
+
+  BoxBorder? get _border => isMessageBySender
+      ? outgoingChatBubbleConfig?.border
+      : inComingChatBubbleConfig?.border;
 }
