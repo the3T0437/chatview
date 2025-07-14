@@ -29,32 +29,32 @@ import 'package:image_picker/image_picker.dart';
 import '../../values/typedefs.dart';
 
 class SendMessageConfiguration {
-  const SendMessageConfiguration({
-    this.textFieldConfig,
-    this.textFieldBackgroundColor,
-    this.imagePickerIconsConfig,
-    this.imagePickerConfiguration,
-    this.defaultSendButtonColor,
-    this.sendButtonIcon,
-    this.replyDialogColor,
-    this.replyTitleColor,
-    this.replyMessageColor,
-    this.closeIconColor,
-    this.allowRecordingVoice = true,
-    this.enableCameraImagePicker = true,
-    this.enableGalleryImagePicker = true,
-    this.voiceRecordingConfiguration,
-    this.micIconColor,
-    this.cancelRecordConfiguration,
-    this.shouldSendImageWithText = false,
-    this.removeImageIcon,
-    this.removeImageIconColor,
-    this.removeImageIconSize,
-    this.selectedImageMargin,
-    this.selectedImageViewHeight,
-    this.imageBorderRadius,
-    this.selectedImageViewBuilder,
-  });
+  const SendMessageConfiguration(
+      {this.textFieldConfig,
+      this.textFieldBackgroundColor,
+      this.imagePickerIconsConfig,
+      this.imagePickerConfiguration,
+      this.defaultSendButtonColor,
+      this.sendButtonIcon,
+      this.replyDialogColor,
+      this.replyTitleColor,
+      this.replyMessageColor,
+      this.closeIconColor,
+      this.allowRecordingVoice = true,
+      this.enableCameraImagePicker = true,
+      this.enableGalleryImagePicker = true,
+      this.voiceRecordingConfiguration,
+      this.micIconColor,
+      this.cancelRecordConfiguration,
+      this.shouldSendImageWithText = false,
+      this.removeImageIcon,
+      this.removeImageIconColor,
+      this.removeImageIconSize,
+      this.selectedImageMargin,
+      this.selectedImageViewHeight,
+      this.imageBorderRadius,
+      this.selectedImageViewBuilder,
+      this.border});
 
   /// Used to give background color to text field.
   final Color? textFieldBackgroundColor;
@@ -127,6 +127,8 @@ class SendMessageConfiguration {
 
   /// Provides ability to build custom view for selected images in text field.
   final SelectedImageViewBuilder? selectedImageViewBuilder;
+
+  final BoxBorder? border;
 }
 
 class ImagePickerIconsConfiguration {
