@@ -430,7 +430,9 @@ class _GroupSeparatorBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return groupSeparatorBuilder != null
-        ? groupSeparatorBuilder!(separator.toString())
+        ? groupSeparatorBuilder!(separator.getDay(
+            defaultGroupSeparatorConfig?.chatSeparatorDatePattern ??
+                "hh:mm dd/MM/yyyy"))
         : ChatGroupHeader(
             day: separator,
             groupSeparatorConfig: defaultGroupSeparatorConfig,
