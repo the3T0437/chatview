@@ -30,6 +30,7 @@ class ChatBubbleConfiguration {
     this.padding,
     this.margin,
     this.maxWidth,
+    this.minWidth,
     this.longPressAnimationDuration,
     this.inComingChatBubbleConfig,
     this.outgoingChatBubbleConfig,
@@ -45,6 +46,9 @@ class ChatBubbleConfiguration {
 
   /// Used for giving maximum width of chat bubble.
   final double? maxWidth;
+
+  /// Used for giving minimum width of chat bubble.
+  final double? minWidth;
 
   /// Provides callback when user long press on chat bubble.
   final Duration? longPressAnimationDuration;

@@ -41,6 +41,7 @@ class MessageView extends StatefulWidget {
     required this.onLongPress,
     required this.isLongPressEnable,
     this.chatBubbleMaxWidth,
+    this.chatBubbleMinWidth,
     this.inComingChatBubbleConfig,
     this.outgoingChatBubbleConfig,
     this.longPressAnimationDuration,
@@ -64,6 +65,9 @@ class MessageView extends StatefulWidget {
 
   /// Allow users to give max width of chat bubble.
   final double? chatBubbleMaxWidth;
+
+  /// Allow users to give min width of chat bubble.
+  final double? chatBubbleMinWidth;
 
   /// Provides configuration of chat bubble appearance from other user of chat.
   final ChatBubble? inComingChatBubbleConfig;
@@ -219,6 +223,7 @@ class _MessageViewState extends State<MessageView>
                     isMessageBySender: widget.isMessageBySender,
                     message: widget.message,
                     chatBubbleMaxWidth: widget.chatBubbleMaxWidth,
+                    chatBubbleMinWidth: widget.chatBubbleMinWidth,
                     messageReactionConfig: messageConfig?.messageReactionConfig,
                     highlightColor: widget.highlightColor,
                     highlightMessage: widget.shouldHighlight,

@@ -289,6 +289,7 @@ class _ChatBubbleWidgetState extends State<ChatBubbleWidget> {
             messageConfig: chatListConfig.messageConfig,
             onLongPress: widget.onLongPress,
             chatBubbleMaxWidth: chatListConfig.chatBubbleConfig?.maxWidth,
+            chatBubbleMinWidth: chatListConfig.chatBubbleConfig?.minWidth,
             longPressAnimationDuration:
                 chatListConfig.chatBubbleConfig?.longPressAnimationDuration,
             onDoubleTap: featureActiveConfig?.enableDoubleTapToLike ?? false

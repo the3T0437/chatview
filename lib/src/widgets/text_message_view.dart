@@ -36,6 +36,7 @@ class TextMessageView extends StatelessWidget {
     required this.isMessageBySender,
     required this.message,
     this.chatBubbleMaxWidth,
+    this.chatBubbleMinWidth,
     this.inComingChatBubbleConfig,
     this.outgoingChatBubbleConfig,
     this.messageReactionConfig,
@@ -51,6 +52,9 @@ class TextMessageView extends StatelessWidget {
 
   /// Allow users to give max width of chat bubble.
   final double? chatBubbleMaxWidth;
+
+  /// Allow users to give min width of chat bubble.
+  final double? chatBubbleMinWidth;
 
   /// Provides configuration of chat bubble appearance from other user of chat.
   final ChatBubble? inComingChatBubbleConfig;
@@ -76,6 +80,7 @@ class TextMessageView extends StatelessWidget {
       children: [
         Container(
           constraints: BoxConstraints(
+              minWidth: chatBubbleMinWidth ?? 0,
               maxWidth: chatBubbleMaxWidth ??
                   MediaQuery.of(context).size.width * 0.75),
           padding: _padding ??
